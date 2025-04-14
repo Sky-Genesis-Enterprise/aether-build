@@ -239,7 +239,7 @@ export class DevServer {
       }
 
       // Determine if we can use HMR or need a full reload
-      const hmrAccepted = this.hasAcceptedUpdate(path, affectedModules);
+      const hmrAccepted = this.hasAcceptedUpdate(path);
 
       // Notify clients
       if (hmrAccepted) {
@@ -265,13 +265,14 @@ export class DevServer {
     // In a real implementation, this would use the module graph
     // to determine exactly which modules depend on the changed file
     // For now we'll return an empty array, meaning only the changed file itself is affected
+    console.log(`Calculating affected modules for: ${path}`);
     return [];
   }
 
   /**
    * Check if a module or its dependents accept HMR updates
    */
-  private hasAcceptedUpdate(path: string, affectedModules: string[]): boolean {
+  private hasAcceptedUpdate(path: string): boolean {
     // In a real implementation, this would check the accept handlers
     // For now, assume all JavaScript/TypeScript modules accept updates
     return /\.(js|mjs|ts|jsx|tsx)$/.test(path);

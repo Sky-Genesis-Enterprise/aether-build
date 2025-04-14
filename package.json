@@ -11,6 +11,7 @@
     "apm": "dist/cli.js"
   },
   "scripts": {
+    "start": "node src/server.ts",
     "dev": "tsc --watch",
     "build": "tsc",
     "lint": "eslint src --ext .ts",

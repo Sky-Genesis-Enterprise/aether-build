@@ -2,6 +2,8 @@
   "name": "aether-build",
   "private": true,
   "version": "0.1.0",
+  "author": "Sky Genesis Enterprise",
+  "license": "MIT",
   "description": "A modern, fast build tool for the Aether ecosystem",
   "type": "module",
   "main": "dist/index.js",
@@ -16,6 +18,7 @@
     "build": "tsc",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
+    "test:unit": "node --test src/**/*.test.ts",
     "test": "node --test",
     "prepublishOnly": "bun run build"
   },
@@ -27,8 +30,6 @@
     "dev-server",
     "esm"
   ],
-  "author": "Aether Team",
-  "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@eslint/js": "^9.18.0",
